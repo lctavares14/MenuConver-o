@@ -11,8 +11,8 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.FontUIResource;
-import static modelo.Construtora.converteDecimalParaHexadecimal;
 import static modelo.Construtora.converteOctalParaHexadecimal;
+import static modelo.Construtora.converteBinarioParaHexadecimal;
 
 public class Construtora {
     
@@ -33,9 +33,9 @@ entrada = JOptionPane.showInputDialog("Informa um valor em base octal para conve
 saida = converteOctalParaHexadecimal(""+Integer.parseInt(entrada));
 JOptionPane.showMessageDialog(null, "conversão é  "+ saida );
 }*/
-// Converte Octal para Decimal	
+// Converte Octal para Binario	
 	
-	public static int converteOctalParaDecimal(String valorOctal) {
+	public static int converteOctalParaBinario(String valorOctal) {
 		  
 		int valor = 0;
 		   // soma ao valor final o dígito binário da posição * 8 elevado ao contador da posição (começa em 0)
@@ -46,9 +46,9 @@ JOptionPane.showMessageDialog(null, "conversão é  "+ saida );
 		   return valor;
 		}
 	
-	// Converte Decimal para Hexadecimal
+	// Converte Binario para Hexadecimal
 	
-	public static String converteDecimalParaHexadecimal(int valor) {
+	public static String converteBinarioParaHexadecimal(int valor) {
 		   char[] hexa = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 		   int resto = -1;
 		   StringBuilder sb = new StringBuilder();
@@ -66,11 +66,11 @@ JOptionPane.showMessageDialog(null, "conversão é  "+ saida );
 		 
 		   return sb.toString();
 		}
-	
+	//Converte Octal para Hexadecimal
 		public static String converteOctalParaHexadecimal(String valorOctal) {
-		   int valorDecimal = converteOctalParaDecimal(valorOctal);
+		   int valorBinario = converteOctalParaBinario(valorOctal);
 		 
-		   return converteDecimalParaHexadecimal(valorDecimal);
+		   return converteBinarioParaHexadecimal(valorBinario);
 		}	
 
                 
